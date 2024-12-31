@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DHS - Retirada de Computador</title>
+        <link rel="stylesheet" href="../Estilos/estilo.css">
+        <link rel="stylesheet" href="../Estilos/computador_retirada.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../Imagens/Icons/Ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../Imagens/Icons/Ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../Imagens/Icons/Ico/favicon-16x16.png">        
+    
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+</head>
+<body>
+    <div class="cadastro_computador">
+        <img src="../Imagens/DHS_Logo1.png" alt="Logo DHS" id="logo_dhs">
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Todos os campos devem ser preenchidos!</p>
+                <div id="progressContainer">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container_retirada_computador">
+            <form id="form_retirada_computador">
+                <div class="voltar">
+                    <button id="botao_voltar" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                </div> 
+                             
+                <div class="titulo_formulario">
+                    <h3 id="titulo_formulario">Carregando Computador...</h3>
+                </div>
+
+                <input type="hidden" id="data_termino_input">
+
+                <!-- Data de Retirada -->
+                <div class="entradas">
+                    <h4 id="titulo_data_retirada">Data de Retirada</h4>
+                    <input type="date" class="inputs required" id="data_retirada_input">
+                    <span id="erroDataRetirada" class="erro">Data de retirada deve ser informada!</span>
+                </div>
+        
+                <!-- Quem Retirou -->
+                <div class="entradas">
+                    <h4 id="titulo_quem_retirou">Quem Retirou?</h4>
+                    <input type="text" placeholder="Insira o nome de quem retirou o computador" class="inputs required" id="quem_retirou_input">
+                    <span id="erroQuemRetirou" class="erro">Nome de quem retirou deve ser informado!</span>
+                </div>
+        
+                <!-- Botão de Cadastro -->
+                <div class="botao_cadastro">
+                    <input type="submit" value="Realizar Retirada" id="botao_retirada">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="rodape"></div>
+
+    <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/computador_retirada.js"></script>
+    <script src="../Ajax/computador_retirada_db.js"></script>
+</body>
+</html>

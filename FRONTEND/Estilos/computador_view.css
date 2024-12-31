@@ -1,0 +1,157 @@
+.cabecalho_view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 10px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid #ccc;
+    height: 60px; /* Ajusta a altura do cabeçalho para mantê-lo alinhado */
+}
+
+/* Configura o botão de voltar */
+.voltar input {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+
+/* Estilo geral para o container dos campos */
+.campos_computador {
+    display: grid;
+    flex-wrap: wrap; /* Permite que os elementos quebrem para a próxima linha */
+    justify-content: space-between; /* Espaça igualmente os elementos */
+    gap: 20px; /* Espaçamento entre os itens */
+    margin: 20px 15px;
+}
+
+/* Estilo para cada elemento h3 */
+.campos_computador h4 {
+    flex: 1 1 calc(50% - 20px); /* Ocupa 1/3 da linha, considerando o espaçamento */
+    padding: 10px;
+    border-radius: 8px; /* Bordas arredondadas */
+    text-align: left;
+    font-weight: normal;
+    color: #333; /* Cor do texto */
+    margin: 2px 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Adiciona um estilo responsivo para telas menores */
+@media (max-width: 768px) {
+    .campos_computador h3 {
+        flex: 1 1 calc(50% - 20px); /* 2 itens por linha em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .campos_computador h3 {
+        flex: 1 1 100%; /* 1 item por linha em telas bem pequenas */
+    }
+}
+
+#campo_origem, #campo_problemaRelatado, #campo_itensTrocados {
+    grid-column: span 2;
+}
+
+.titulo_formulario h3 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5em; /* Ajusta o tamanho da fonte para um destaque maior */
+    color: #333;
+}
+
+.btns-acoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    padding: 10px 10px;
+}
+
+#btn-editar {
+    background-color: #007bff; /* Azul padrão do sistema */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-excluir {
+    background-color: #dc3545; /* Vermelho */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-cancelar-exclusao {
+    background-color: #28a745; /* Verde */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#btn-editar:hover, #btn-excluir:hover, #btn-cancelar-exclusao:hover {
+    opacity: 0.8; /* Efeito de hover para os botões */
+}
+
+/* Alerta Personalizado */
+.alerta {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Conteúdo do Alerta */
+.alerta-conteudo {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
+}
+
+/* Botões do Alerta */
+.alerta-botoes {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+}
+
+.btn-alerta-confirm {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-alerta-cancel {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}

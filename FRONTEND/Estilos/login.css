@@ -1,0 +1,112 @@
+/*Configuração da tela de Login*/
+.login #logo_dhs{
+    display: block;
+    margin: auto;
+    width: 20em;
+    height: 20em;   
+}
+
+.container_login{
+    display: block;
+    margin: auto;
+    width: 30em;
+    height: 20em;
+    background: #fff;
+    border: 3px solid #5271ff;
+    margin-top: -6em;
+    border-radius: 40px;
+}
+
+.container_login .email, .container_login .senha, .container_login .botoes_login{
+    margin-left: 0.66em;   
+    padding: 1.5em;
+}
+
+.container_login .email #titulo_email{
+    margin-top: 1.5em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.container_login .email #email_input{
+    margin-top: 0.5em;
+    width: 30.2em;
+    height: 3em;
+    border-radius: 10px;
+    border: 0.15em solid #545454;
+    padding-left: 0.5em;
+}
+
+.container_login .email #emaiil_input::placeholder{
+    font-size: 1.1em;
+}
+
+.container_login .senha #titulo_senha{
+    margin-top: -2em;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.container_login .senha #senha_input{
+    margin-top: 0.5em;
+    width: 30.2em;
+    height: 3em;
+    border-radius: 10px;
+    border: 0.15em solid #545454;
+    padding-left: 0.5em;
+}
+
+.container_login .senha #senha_input::placeholder{
+    font-size: 1.1em
+}
+
+.botoes_login{
+    width: 27em;
+    height: 2em;
+    margin-top: -1.5em;
+}
+
+.botoes_login #botao_criarConta{
+    width: 15em;
+    height: 3.5em;
+    border-radius: 25px;
+    background: #545454;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.botoes_login #botao_login{
+    margin-left: 3.4em;
+    margin-top: -1em;
+    width: 10em;
+    height: 3.5em;
+    border-radius: 25px;
+    background: #5271ff;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+#progressBar_login {
+    width: 0;
+    height: 5px;
+    background-color: red; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}
+
+#progressBar_cadastro {
+    width: 0;
+    height: 5px;
+    background-color: #4caf50; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}
+
+#progressBar_logout {
+    width: 0;
+    height: 5px;
+    background-color: #4caf50; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}

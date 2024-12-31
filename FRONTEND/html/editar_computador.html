@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DHS - Computador</title>
+        <link rel="stylesheet" href="../Estilos/estilo.css">
+        <link rel="stylesheet" href="../Estilos/ec.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../Imagens/Icons/Ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../Imagens/Icons/Ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../Imagens/Icons/Ico/favicon-16x16.png">
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+<body>
+
+    <div class="computadores">
+        <div class="cabecalho">
+            <img src="../Imagens/DHS_Logo1.png" alt="Logo DHS" id="logo_dhs2">
+            <h3 id="titulo"> DIVISÃO DE HARDWARE E SUPORTE DE T.I.</h3>
+        </div>     
+
+
+        <div class="container_conteudo">
+            <div class="barra_lateral">
+                <div class="btns">
+                    <button id="btn_computadores"><i class="fas fa-desktop"></i> Computadores</button>
+                </div>
+                <div class="logout">
+                    <button id="btn_logout"><i class="fas fa-sign-out-alt"></i> Log-Out</button>
+                </div>                
+            </div>
+
+            <div class="container_computadores">
+                <div class="computadores-container">
+                    <!-- Botão de voltar -->
+                    <div class="cabecalho_view">
+                        <div class="voltar">
+                            <button id="botao_voltar" onclick="window.history.back()">
+                                <i class="fas fa-arrow-left"></i> Voltar
+                            </button>
+                        </div>      
+                
+                        <!-- Título do formulário fixo -->
+                        <div class="titulo_formulario">
+                            <h3 id="titulo_formulario">Carregando Computador...</h3>                        
+                        </div>
+                    </div>                    
+                    
+                    <!-- Campos do computador com layout de duas colunas -->
+                    <form id="form_editar_computador">
+                        <div class="campos_computador"> 
+
+                            <div class="campos_computador">
+                                <div class="entradas">
+                                    <h4>SOLICITANTE:</h4>
+                                    <input type="text" placeholder="Insira o nome do solicitante" class="inputs required" id="solicitante_input">
+                                     <span id="erroSolicitante" class="erro">Solicitante deve ser informado!</span></div>
+                                <div class="entradas">
+                                    <h4>NÚMERO DO CHAMADO:</h4>
+                                    <input type="text" placeholder="Insira o número do chamado" class="inputs required" id="numero_chamado_input">
+                                    <span id="erroNumeroChamado" class="erro">Número do chamado deve ser informado!</span>    
+                                </div>
+                                <div class="entradas" id="campo_origem">
+                                    <h4>ORIGEM:</h4>
+                                    <select id="origem_input" class="inputs required">
+                                        <!-- As opções serão carregadas aqui pelo JavaScript -->
+                                        <option value="">Carregando...</option>
+                                    </select>
+                                    <span id="erroOrigem" class="erro" style="display: none;">Origem é obrigatória!</span>
+                                </div>
+                                <div class="entradas" id="campo_itensTrocados">
+                                    <h4>PROBLEMA RELATADO:</h4>
+                                    <textarea placeholder="Descreva o problema relatado" class="inputs required" id="problema_input"></textarea>
+                                    <span id="erroProblema" class="erro">Problema deve ser informado!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>DATA DE ENTRADA:</h4>
+                                    <input type="date" class="inputs required" id="data_entrada_input">
+                                    <span id="erroDataEntrada" class="erro">Data de entrada deve ser informada!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>DATA DE TÉRMINO:</h4>
+                                    <input type="date" class="inputs required" id="data_termino_input">
+                                    <span id="erroDataTermino" class="erro">Data de término deve ser informada!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>PROCESSADOR:</h4>
+                                    <input type="text" placeholder="Insira o modelo do processador" class="inputs required" id="processador_input">
+                                    <span id="erroProcessador" class="erro">Processador deve ser informado!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>MEMÓRIA RAM (GB):</h4>
+                                    <input type="number" placeholder="Insira a memória RAM em GB" class="inputs required" id="memoria_ram_input">
+                                    <span id="erroMemoriaRAM" class="erro">Memória RAM deve ser informada!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>ARMAZENAMENTO (GB):</h4>
+                                    <input type="number" placeholder="Insira o armazenamento em GB" class="inputs required" id="armazenamento_input">
+                                    <span id="erroArmazenamento" class="erro">Armazenamento deve ser informado!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>TROCA DE PEÇA:</h4>
+                                    <select id="troca_input" class="inputs required" onchange="toggleItensTrocados()">
+                                        <option value="nao">Não</option>
+                                        <option value="sim">Sim</option>
+                                    </select>
+                                    <span id="erroTroca" class="erro">Selecione uma opção válida!</span>                
+                                </div>
+                                <div class="entradas" id="itens_trocados_container" style="display: none;">
+                                    <h4>ITENS TROCADOS:</h4>
+                                    <textarea placeholder="Descreva os itens trocados" class="inputs required" id="itens_trocados_input"></textarea>
+                                    <span id="erroItensTrocados" class="erro">Itens trocados devem ser informados!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>QUEM FEZ:</h4>
+                                    <input type="text" placeholder="Insira o nome de quem realizou o serviço" class="inputs required" id="quem_fez_input">
+                                    <span id="erroQuemFez" class="erro">Quem fez deve ser informado!</span>
+                                </div>
+                                <div class="entradas">
+                                    <h4>ESTADO:</h4>
+                                    <select id="estado_input" class="inputs required">
+                                        <option value="">Selecione o estado</option>
+                                        <option value="funcionando">Funcionando</option>
+                                        <option value="defeito">Com Defeito</option>
+                                        <!-- Adicione mais opções conforme necessário -->
+                                    </select>
+                                    <span id="erroEstado" class="erro">Selecione um estado válido!</span>                
+                                </div>
+
+                                <!-- Botão de Cadastro -->
+                                <div class="botao_cadastro">
+                                    <input type="submit" value="Salvar" id="botao_cadastro" >
+                                </div>
+                            </div>
+                    </form>                    
+                </div>      
+                          
+            </div>
+        </div>
+    </div>
+
+    <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/editar_computador.js"></script>
+    <script src="../Ajax/editar_computador_db.js"></script>
+</body>
+</html>

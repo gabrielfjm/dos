@@ -1,0 +1,25 @@
+.container_retirada_computador{
+    padding-bottom: 5em;
+    display: block;
+    margin: auto;
+    width: 30em;
+    height: 21em;
+    background: #fff;
+    border: 3px solid #5271ff;
+    margin-top: -6em;
+    border-radius: 40px;
+}
+
+#botao_retirada{
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    width: 15em;
+    height: 3.5em;
+    border-radius: 25px;
+    background: #5271ff;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+}

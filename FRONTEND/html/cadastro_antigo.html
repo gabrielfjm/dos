@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DHS - Cadastro de Computador</title>
+        <link rel="stylesheet" href="../Estilos/estilo.css">
+        <link rel="stylesheet" href="../Estilos/cadastro.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../Imagens/Icons/Ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../Imagens/Icons/Ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../Imagens/Icons/Ico/favicon-16x16.png">        
+    
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+</head>
+<body>
+    <div class="cadastro_conteudor">
+        <img src="../Imagens/DHS_Logo1.png" alt="Logo DHS" id="logo_dhs">
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Todos os campos devem ser preenchidos!</p>
+                <div id="progressContainer">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container_cadastro_conteudo">
+            <form id="form_cadastro_computador">
+                <div class="voltar">
+                    <button id="botao_voltar" onclick="window.history.back()">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                </div> 
+        
+                <!-- Patrimônio -->
+                <div class="entradas">
+                    <h4 id="titulo_patrimonio">Patrimônio</h4>
+                    <input type="text" placeholder="Insira o patrimônio do computador" class="inputs required" id="patrimonio_input" value="PQA-">
+                    <span id="erroPatrimonio" class="erro">Patrimônio deve ser informado!</span>
+                </div>
+        
+                <!-- Solicitante -->
+                <div class="entradas">
+                    <h4 id="titulo_solicitante">Solicitante</h4>
+                    <input type="text" placeholder="Insira o nome do solicitante" class="inputs required" id="solicitante_input">
+                    <span id="erroSolicitante" class="erro">Solicitante deve ser informado!</span>
+                </div>
+        
+                <!-- Número do Chamado -->
+                <div class="entradas">
+                    <h4 id="titulo_numero_chamado">Número do Chamado</h4>
+                    <input type="text" placeholder="Insira o número do chamado" class="inputs required" id="numero_chamado_input">
+                    <span id="erroNumeroChamado" class="erro">Número do chamado deve ser informado!</span>
+                </div>
+        
+                <!-- Origem -->
+                <div class="entradas">
+                    <h4 id="titulo_origem">Origem</h4>
+                    <select id="origem_input" class="inputs required">
+                        <!-- As opções serão carregadas aqui pelo JavaScript -->
+                        <option value="">Carregando...</option>
+                    </select>
+                    <span id="erroOrigem" class="erro" style="display: none;">Origem é obrigatória!</span>
+                </div>
+        
+                <!-- Problema Relatado -->
+                <div class="entradas">
+                    <h4 id="titulo_problema">Problema Relatado</h4>
+                    <textarea placeholder="Descreva o problema relatado" class="inputs required" id="problema_input"></textarea>
+                    <span id="erroProblema" class="erro">Problema deve ser informado!</span>
+                </div>
+        
+                <!-- Data de Entrada -->
+                <div class="entradas">
+                    <h4 id="titulo_data_entrada">Data de Entrada</h4>
+                    <input type="date" class="inputs required" id="data_entrada_input">
+                    <span id="erroDataEntrada" class="erro">Data de entrada deve ser informada!</span>
+                </div>
+        
+                <!-- Data de Término -->
+                <div class="entradas">
+                    <h4 id="titulo_data_termino">Data de Término</h4>
+                    <input type="date" class="inputs required" id="data_termino_input">
+                    <span id="erroDataTermino" class="erro">Data de término deve ser informada!</span>
+                </div>
+        
+                <!-- Memória RAM (GB) -->
+                <div class="entradas">
+                    <h4 id="titulo_memoria_ram">Memória RAM (GB)</h4>
+                    <input type="number" placeholder="Insira a memória RAM em GB" class="inputs required" id="memoria_ram_input">
+                    <span id="erroMemoriaRAM" class="erro">Memória RAM deve ser informada!</span>
+                </div>
+        
+                <!-- Armazenamento (GB) -->
+                <div class="entradas">
+                    <h4 id="titulo_armazenamento">Armazenamento (GB)</h4>
+                    <input type="number" placeholder="Insira o armazenamento em GB" class="inputs required" id="armazenamento_input">
+                    <span id="erroArmazenamento" class="erro">Armazenamento deve ser informado!</span>
+                </div>
+        
+                <!-- Processador -->
+                <div class="entradas">
+                    <h4 id="titulo_processador">Processador</h4>
+                    <input type="text" placeholder="Insira o modelo do processador" class="inputs required" id="processador_input">
+                    <span id="erroProcessador" class="erro">Processador deve ser informado!</span>
+                </div>
+        
+                <!-- Troca de Peça -->
+                <div class="entradas">
+                    <h4 id="titulo_troca">Troca de Peça</h4>
+                    <select id="troca_input" class="inputs required" onchange="toggleItensTrocados()">
+                        <option value="nao">Não</option>
+                        <option value="sim">Sim</option>
+                    </select>
+                    <span id="erroTroca" class="erro">Selecione uma opção válida!</span>
+                </div>
+        
+                <!-- Itens Trocados -->
+                <div class="entradas" id="itens_trocados_container" style="display: none;">
+                    <h4 id="titulo_itens_trocados">Itens Trocados</h4>
+                    <textarea placeholder="Descreva os itens trocados" class="inputs required" id="itens_trocados_input"></textarea>
+                    <span id="erroItensTrocados" class="erro">Itens trocados devem ser informados!</span>
+                </div>
+        
+                <!-- Quem fez -->
+                <div class="entradas">
+                    <h4 id="titulo_quem_fez">Quem fez?</h4>
+                    <input type="text" placeholder="Insira o nome de quem realizou o serviço" class="inputs required" id="quem_fez_input">
+                    <span id="erroQuemFez" class="erro">Quem fez deve ser informado!</span>
+                </div>
+        
+                <!-- Estado -->
+                <div class="entradas">
+                    <h4 id="titulo_estado">Estado</h4>
+                    <select id="estado_input" class="inputs required">
+                        <option value="">Selecione o estado</option>
+                        <option value="funcionando">Funcionando</option>
+                        <option value="defeito">Com Defeito</option>
+                        <!-- Adicione mais opções conforme necessário -->
+                    </select>
+                    <span id="erroEstado" class="erro">Selecione um estado válido!</span>
+                </div>
+        
+                <!-- Botão de Cadastro -->
+                <div class="botao_cadastro">
+                    <input type="submit" value="Cadastrar Computador" id="botao_cadastro">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="rodape"></div>
+
+    <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/cadastro_computador.js"></script>
+    <script src="../Ajax/cadastro_computador_db.js"></script>
+</body>
+</html>

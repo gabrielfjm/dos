@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DHS - Cadastro</title>
+        <link rel="stylesheet" href="../Estilos/estilo.css">
+        <link rel="stylesheet" href="../Estilos/cadastro.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../Imagens/Icons/Ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../Imagens/Icons/Ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../Imagens/Icons/Ico/favicon-16x16.png">        
+    
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+</head>
+<body>
+    <div class="cadastro">
+        <img src="../Imagens/DHS_Logo1.png" alt="Logo DHS" id="logo_dhs">
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Todos os campos devem ser preenchidos!</p>
+                <div id="progressContainer">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container_cadastro">
+            <form id="form_cadastro">
+                <div class="voltar">
+                    <button id="botao_voltar" onclick="window.location.href='../index.html'">
+                        <i class="fas fa-arrow-left"></i> Voltar
+                    </button>
+                </div>                
+
+                <div class="entradas">
+                    <h4 id="titulo_nome_completo">
+                        Nome Completo
+                    </h4>
+                    <input type="text" placeholder="Insira seu nome completo" class="inputs required" id="nome_completo_input">
+                    <span id="erroNome" class="erro">Nome inválido! Não pode conter números ou caracteres especiais (exceto "~").</span>
+                    <span class="span_required"></span>
+                </div>
+
+                <div class="entradas">
+                    <h4 id="titulo_Apelido">
+                        Apelido
+                    </h4>
+                    <input type="text" placeholder="Insira seu apelido de usuário" class="inputs required" id="apelido_input">
+                    <span id="erroApelido" class="erro">Apelido inválido! Não pode conter espaços ou caracteres especiais.</span>
+                    <span class="span_required"></span>
+                </div>
+
+                <div class="entradas">
+                    <h4 id="titulo_email">
+                        Email
+                    </h4>
+                    <input type="text" placeholder="Insira seu email" class="inputs required" id="email_input">
+                    <span id="erroEmail" class="erro">Email inválido! Por favor, insira um formato de email válido.</span>
+                    <span class="span_required"></span>
+                </div>
+
+                <div class="entradas">
+                    <h4 id="titulo_senha">Senha</h4>
+                    <div class="input-container">
+                        <input type="password" placeholder="Insira sua senha" class="inputs required" id="senha_input">
+                        <span id="toggleSenha" class="toggle-eye">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </span>
+                    </div>
+                    <span id="erroSenha" class="erro">Senha fraca! Deve conter ao menos uma letra maiúscula, uma minúscula, um número, um caracter especial e ter no mínimo 8 caracteres.</span>
+                </div>
+                
+
+                <div class="entradas">
+                    <h4 id="titulo_confirmar_senha">Confirmar Senha</h4>
+                    <div class="input-container">
+                        <input type="password" placeholder="Confirme sua senha" class="inputs required" id="confirmar_senha_input">
+                        <span id="toggleConfirmarSenha" class="toggle-eye">
+                            <i class="fas fa-eye" id="eyeIconConfirmarSenha"></i>
+                        </span>
+                    </div>
+                    <span id="erroConfirmarSenha" class="erro">As senhas não coincidem!</span>
+                </div>
+
+                <div class="botao_cadastro">
+                    <input type="submit" value="Criar Conta" id="botao_cadastro" onclick="">                
+                </div>  
+            </form>
+        </div>
+    </div>
+
+    <div class="rodape"></div>
+
+    <script src="../Scripts/script.js"></script>
+    <script src="../Scripts/cadastro.js"></script>
+    <script src="../Ajax/cadastro_db.js"></script>
+</body>
+</html>
