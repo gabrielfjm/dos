@@ -1,0 +1,26 @@
+.container_editar_computador{
+    padding-bottom: 3em;
+    display: block;
+    margin: auto;
+    width: 30em;
+    height: dynamic; /* Definir altura dinâmica por padrão */
+    transition: height 0.3s ease; /* Transição suave para quando a altura mudar */
+    background: #fff;
+    border: 3px solid #5271ff;
+    margin-top: -6em;
+    border-radius: 40px;
+}
+
+#botao_atualizar{
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    width: 15em;
+    height: 3.5em;
+    border-radius: 25px;
+    background: #5271ff;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+}

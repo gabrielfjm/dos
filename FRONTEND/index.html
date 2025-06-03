@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHS</title>
+    
+    <link rel="stylesheet" href="./Estilos/estilo.css">
+    <link rel="stylesheet" href="./Estilos/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="./Imagens/Icons/Ico/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./Imagens/Icons/Ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./Imagens/Icons/Ico/favicon-16x16.png">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="login">
+        <img src="./Imagens/DHS_Logo1.png" alt="Logo DHS" id="logo_dhs">
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <p>Todos os campos devem ser preenchidos!</p>
+                <div id="progressContainer">
+                    <div id="progressBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal_usuario_cadastrado" class="modal">
+            <div class="modal-content">
+                <p>Usuário cadastrado com sucesso!</p>
+                <div id="progressContainer">
+                    <div id="progressBar_cadastro"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal_login_invalido" class="modal">
+            <div class="modal-content">
+                <p>Email ou senha incorreto(s)!</p>
+                <div id="progressContainer">
+                    <div id="progressBar_login"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="modal_login_logout" class="modal">
+            <div class="modal-content">
+                <p>Logout realizado!</p>
+                <div id="progressContainer">
+                    <div id="progressBar_logout"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container_login">
+            <form id="form_login">
+                <div class="email">
+                    <h4 id="titulo_email">
+                        Email
+                    </h4>
+                    <input type="text" placeholder="Insira seu email cadastrado" class="inputs required" id="email_input" oninput="validaUsuario()">
+                    <span id="erroEmail" class="erro">Email inválido! Por favor, insira um formato de email válido.</span>
+                    <span class="span_required"></span>
+                </div>
+    
+                <div class="senha">
+                    <h4 id="titulo_senha">
+                        Senha
+                    </h4>
+                    <div class="input-container">
+                        <input type="password" placeholder="Insira sua senha" class="inputs required" id="senha_input">
+                        <span id="toggleSenha" class="toggle-eye">
+                            <i class="fas fa-eye" id="eyeIcon"></i>
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="botoes_login">
+                    <input type="button" value="Crie sua conta" id="botao_criarConta" onclick="window.location.href='./html/cadastro.html'">
+                    <input type="submit" value="Login" id="botao_login">                
+                </div>       
+            </form>     
+        </div>
+    </div>
+
+    <div class="rodape"></div>
+
+    <script src="../Scripts/script.js"></script>
+    <script src="./Scripts/login.js"></script>
+    <script src="./Ajax/login_db.js"></script>
+</body>
+</html>

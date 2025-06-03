@@ -1,0 +1,44 @@
+/*Tela de cadastro*/
+.container_cadastro{
+    padding-bottom: 5em;
+    display: block;
+    margin: auto;
+    width: 30em;
+    height: 34  em;
+    background: #fff;
+    border: 3px solid #5271ff;
+    margin-top: -6em;
+    border-radius: 40px;
+}
+
+.container_cadastro .nome_completo, .container_cadastro .apelido, .container_cadastro .email, .container_cadastro .senha, .container_cadastro .confirmar_senha{
+    margin-left: 0.66em;   
+    padding: 1.5em;
+    margin-bottom: -2.5em;
+}
+
+.container_cadastro .voltar #botao_voltar{
+    margin-top: 2em;
+    margin-left: 2em;
+    width: 5em;
+    height: 3em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    background: #545454;
+    color: #fff;
+}
+
+#botao_cadastro{
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+    width: 15em;
+    height: 3.5em;
+    border-radius: 25px;
+    background: #5271ff;
+    border: none;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+}

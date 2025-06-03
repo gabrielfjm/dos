@@ -1,0 +1,88 @@
+.cabecalho_view {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    padding: 10px 20px;
+    z-index: 1000;
+    border-bottom: 2px solid #ccc;
+    height: 60px; /* Ajusta a altura do cabeçalho para mantê-lo alinhado */
+}
+
+/* Configura o botão de voltar */
+.voltar input {
+    padding: 10px 15px;
+    font-size: 0.9em;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 24px;
+}
+
+/* Estilo geral para o container dos campos */
+.campos_computador {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+}
+
+.entradas textarea, .entradas input, .entradas select{
+    border: none;
+    max-width: 50%;
+    border-radius: 4px;
+    font-size: 0.9em;
+    border-bottom: 1px solid #ccc;
+}
+
+.entradas h4 {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#campo_problemaRelatado, #itens_trocados_container, #botao_cadastro {
+    grid-column: span 2;
+}
+
+.titulo_formulario h3 {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5em; /* Ajusta o tamanho da fonte para um destaque maior */
+    color: #333;
+}
+
+/* Ajusta o botão de cadastro para ocupar toda a linha e ser centralizado */
+.botao_cadastro {
+    grid-column: span 2; /* Faz o botão ocupar as duas colunas do grid */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+#botao_cadastro {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-left: -13em;
+}
+
+#botao_cadastro:hover {
+    opacity: 0.8;
+}
+
+#form_cadastro_computador{
+    overflow-y: hidden;
+    overflow-x: hidden;
+}

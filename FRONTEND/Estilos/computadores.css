@@ -1,0 +1,191 @@
+#progressBar_logado {
+    width: 0;
+    height: 5px;
+    background-color: #4caf50; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}
+
+#progressBar_computador_inserido {
+    width: 0;
+    height: 5px;
+    background-color: #4caf50; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}
+
+#progressBar_computador_retirado {
+    width: 0;
+    height: 5px;
+    background-color: #4caf50; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}
+
+#progressBar_computador_excluido {
+    width: 0;
+    height: 5px;
+    background-color: red; /* Cor da barrinha de progresso */
+    transition: width 0.1s ease-in-out; /* Suaviza a transição */
+}
+
+/* Estilo para a barra de pesquisa */
+.barra-pesquisa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 0;
+    z-index: 15;
+}
+
+.barra-pesquisa input {
+    width: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.barra-pesquisa button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.barra-pesquisa button i {
+    margin-right: 5px;
+}
+
+#btnPesquisar:hover {
+    color: #fff;
+    background-color: #979898;
+}
+
+/* Estilo específico para o botão de adicionar computador */
+.btn-adicionar-computador {
+    background-color: #007BFF; /* Azul */
+    color: white;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-adicionar-computador:hover {
+    background-color: #0056b3; /* Cor mais escura ao passar o mouse */
+}
+
+/* Cor de fundo e centralização dos ícones dos botões */
+.btn-editar i, .btn-entrega i {
+    color: #007bff; /* Azul para editar */
+    text-align: center;
+}
+
+/* Estilo básico para os botões */
+.btn-editar, .btn-entrega {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Ícone de lápis para editar */
+.btn-editar i {
+    color: #007bff; /* Azul */
+}
+
+/* Ícone de caixa para entrega */
+.btn-entrega i {
+    color: #28a745; /* Verde */
+}
+
+/* Estilo ao passar o mouse sobre os botões */
+.btn-editar:hover i {
+    color: #0056b3;
+}
+
+.btn-entrega:hover i {
+    color: #218838;
+}
+
+/* Container geral da tabela */
+.table-container {
+    width: 100%;
+    display: block;
+    max-height: 340px;
+    overflow-y: auto; /* Faz com que apenas o corpo da tabela role */
+    position: relative;
+    margin-top: 20px;
+    font-size: 0.8em;
+}
+
+/* Estilo geral para a tabela */
+.computadores-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Garante que as colunas tenham o mesmo tamanho */
+    position: relative;
+    border: 1px solid #ccc;
+}
+
+/* Estilo para o cabeçalho da tabela */
+.computadores-table thead {
+    background-color: #969595;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Células do cabeçalho */
+.computadores-table thead th {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    word-wrap: break-word;
+    height: 40px;
+    font-size: 0.9em;
+}
+
+/* Corpo da tabela */
+.computadores-table tbody {
+    background-color: #ffffff;
+    word-wrap: break-word;
+}
+
+/* Células do corpo da tabela */
+.computadores-table tbody td {
+    padding: 10px;
+    border: 1px solid #dcdcdc;
+    text-align: center;
+    height: 40px;
+}
+
+/* Estilo de hover nas linhas */
+.computadores-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Adiciona bordas suaves */
+.computadores-table td, .computadores-table th {
+    border: 1px solid #dcdcdc;
+}
+
+/* Estiliza os ícones de ação */
+.icon-search, .icon-edit {
+    font-size: 16px;
+    color: #1a73e8;
+    cursor: pointer;
+}

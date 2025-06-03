@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DHS - Computadores</title>
+        <link rel="stylesheet" href="../Estilos/estilo.css">
+        <link rel="stylesheet" href="../Estilos/computadores.css">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="../Imagens/Icons/Ico/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../Imagens/Icons/Ico/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../Imagens/Icons/Ico/favicon-16x16.png">
+
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    </head>
+<body>
+    <div id="modal_usuario_logado" class="modal">
+        <div class="modal-content">
+            <p>Login realizado com sucesso!</p>
+            <div id="progressContainer">
+                <div id="progressBar_logado"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_computador_inserido" class="modal">
+        <div class="modal-content">
+            <p>Computador inserido com sucesso!</p>
+            <div id="progressContainer">
+                <div id="progressBar_computador_inserido"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_computador_atualizado" class="modal">
+        <div class="modal-content">
+            <p>Computador atualizado com sucesso!</p>
+            <div id="progressContainer">
+                <div id="progressBar_computador_atualizado"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_computador_retirado" class="modal">
+        <div class="modal-content">
+            <p>Computador retirado com sucesso!</p>
+            <div id="progressContainer">
+                <div id="progressBar_computador_retirado"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal_computador_excluido" class="modal">
+        <div class="modal-content">
+            <p>Computador excluído com sucesso!</p>
+            <div id="progressContainer">
+                <div id="progressBar_computador_excluido"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="computadores">
+        <div class="cabecalho">
+            <img src="../Imagens/DHS_Logo1.png" alt="Logo DHS" id="logo_dhs2">
+            <h3 id="titulo"> DIVISÃO DE HARDWARE E SUPORTE DE T.I.</h3>
+        </div>
+
+        <div class="container_conteudo">
+            <div class="barra_lateral">
+                <div class="btns">
+                    <button id="btn_computadores"><i class="fas fa-desktop"></i> Computadores</button>
+                </div>
+                <div class="logout">
+                    <button id="btn_logout"><i class="fas fa-sign-out-alt"></i> Log-Out</button>
+                </div>                
+            </div>
+            <div class="container_computadores">
+                <div class="computadores-container">
+                    
+
+                    <!-- Barra de Pesquisa -->
+                    <div class="barra-pesquisa">
+                        <input type="text" id="pesquisaComputadores" placeholder="Pesquisar por patrimônio ou chamado">
+                        <button id="btnPesquisar"><i class="fas fa-search"></i> Pesquisar</button>
+                        <button id="btnAdicionarComputador" class="btn-adicionar-computador">
+                            <i class="fas fa-plus"></i> Adicionar Computador
+                        </button>                        
+                    </div>
+                
+                    <div class="table-container">
+                        <table class="computadores-table">
+                            <thead>
+                                <tr>
+                                    <th>Consultar</th>
+                                    <th>Patrimônio</th>
+                                    <th>Número do Chamado</th>
+                                    <th>Origem</th>
+                                    <th>Data de Entrada</th>
+                                    <th>Data de Retirada</th>
+                                    <th>Estado</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela_computadores">
+                                <!-- Os dados do corpo da tabela são adicionados aqui -->
+                                <!-- Exemplo de linha:
+                                <tr>
+                                    <td><i class="icon-search"></i></td>
+                                    <td>SP8756A</td>
+                                    <td>3.451/2024</td>
+                                    <td>Secretaria Municipal</td>
+                                    <td>10/10/2024</td>
+                                    <td>21/10/2024</td>
+                                    <td>Funcionando</td>
+                                    <td><i class="icon-edit"></i></td>
+                                </tr>
+                                -->
+                            </tbody>
+                        </table>
+                    </div>                             
+                </div>                
+            </div>
+        </div>
+    </div>
+
+    <script src="../Scripts/computadores.js"></script>
+    <script src="../Ajax/computadores_db.js"></script>
+    <script src="../Scripts/script.js"></script>    
+</body>
+</html>
