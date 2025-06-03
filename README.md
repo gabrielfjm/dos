@@ -1,4 +1,4 @@
-# DOS - Sistema de Gerenciamento de Manutenção e Estoque
+# DOS - Sistema de Gerenciamento de Manutenção e Estoque 💻🛠️
 
 ## Visão Geral
 
@@ -14,7 +14,7 @@ O sistema oferece as seguintes funcionalidades principais:
 
 * **Controle de Fluxo de Equipamentos:**
     * Registro de entrada de computadores para manutenção.
-    * Acompanhamento do status de cada equipamento (ex: em diagnóstico, aguardando peça, em reparo, finalizado).
+    * Acompanhamento do status de cada equipamento.
     * Registro de saída de computadores após a manutenção.
 * **Gerenciamento de Estoque:**
     * Cadastro e controle de itens do estoque (peças, componentes, periféricos).
@@ -24,11 +24,8 @@ O sistema oferece as seguintes funcionalidades principais:
     * Histórico completo de manutenções por equipamento.
     * Rastreabilidade de quais peças do estoque foram utilizadas em quais manutenções.
 * **Geração de Relatórios:**
-    * Emissão de relatórios em formato PDF, contendo informações sobre:
-        * Equipamentos em manutenção.
-        * Histórico de manutenções.
-        * Status do estoque.
-        * Outras informações gerenciais relevantes.
+    * Emissão de relatório em formato PDF, contendo informações sobre os:
+        * Equipamentos que passaram por manutenção.
 
 ## Tecnologias Utilizadas
 
